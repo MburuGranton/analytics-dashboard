@@ -1,9 +1,9 @@
 import React from 'react';
-import { DollarSign, Users, ArrowUpRight, Activity } from 'lucide-react';
+import { Users, Activity, Calendar, ArrowUpRight } from 'lucide-react';
 import MetricCard from '../components/MetricCard';
 import LineChart from '../components/LineChart';
 import BarChart from '../components/BarChart';
-import { kpiMetrics, revenueData, trafficSources, recentActivity } from '../data/mockData';
+import { kpiMetrics, membershipData, acquisitionChannels, recentActivity } from '../data/mockData';
 
 const Overview: React.FC = () => {
   return (
@@ -17,32 +17,32 @@ const Overview: React.FC = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
         <MetricCard
-          title="Total Revenue"
-          value={kpiMetrics.revenue.value}
-          change={kpiMetrics.revenue.change}
-          period={kpiMetrics.revenue.period}
-          icon={DollarSign}
-        />
-        <MetricCard
-          title="Total Users"
-          value={kpiMetrics.users.value}
-          change={kpiMetrics.users.change}
-          period={kpiMetrics.users.period}
+          title="Total Members"
+          value={kpiMetrics.totalMembers.value}
+          change={kpiMetrics.totalMembers.change}
+          period={kpiMetrics.totalMembers.period}
           icon={Users}
         />
         <MetricCard
-          title="Conversion Rate"
-          value={kpiMetrics.conversion.value}
-          change={kpiMetrics.conversion.change}
-          period={kpiMetrics.conversion.period}
-          icon={ArrowUpRight}
+          title="Active Members"
+          value={kpiMetrics.activeMembers.value}
+          change={kpiMetrics.activeMembers.change}
+          period={kpiMetrics.activeMembers.period}
+          icon={Activity}
         />
         <MetricCard
-          title="Bounce Rate"
-          value={kpiMetrics.bounceRate.value}
-          change={kpiMetrics.bounceRate.change}
-          period={kpiMetrics.bounceRate.period}
-          icon={Activity}
+          title="Events Held"
+          value={kpiMetrics.eventsHeld.value}
+          change={kpiMetrics.eventsHeld.change}
+          period={kpiMetrics.eventsHeld.period}
+          icon={Calendar}
+        />
+        <MetricCard
+          title="Retention Rate"
+          value={kpiMetrics.retentionRate.value}
+          change={kpiMetrics.retentionRate.change}
+          period={kpiMetrics.retentionRate.period}
+          icon={ArrowUpRight}
         />
       </div>
 
@@ -50,22 +50,22 @@ const Overview: React.FC = () => {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         <div className="xl:col-span-2">
           <LineChart
-            title="Revenue Trend"
-            data={revenueData.map((d) => ({
+            title="Membership Growth"
+            data={membershipData.map((d) => ({
               label: d.month,
-              value: d.revenue,
-              secondaryValue: d.previousRevenue,
+              value: d.members,
+              secondaryValue: d.previousMembers,
             }))}
             showSecondary
-            formatValue={(v) => `$${(v / 1000).toFixed(0)}k`}
+            formatValue={(v) => v.toLocaleString()}
           />
         </div>
         <div>
           <BarChart
-            title="Traffic Sources"
-            data={trafficSources.map((s) => ({
+            title="Acquisition Channels"
+            data={acquisitionChannels.map((s) => ({
               label: s.source,
-              value: s.visitors,
+              value: s.members,
               color: s.color,
             }))}
             horizontal

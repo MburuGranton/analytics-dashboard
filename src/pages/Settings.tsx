@@ -91,10 +91,10 @@ const Settings: React.FC = () => {
 
         <div className="space-y-4">
           {[
-            { key: 'email' as const, icon: Mail, label: 'Email Notifications', desc: 'Receive email updates about your account activity' },
-            { key: 'push' as const, icon: Bell, label: 'Push Notifications', desc: 'Get notified about important events in real-time' },
-            { key: 'weekly' as const, icon: Globe, label: 'Weekly Digest', desc: 'Receive a weekly summary of your analytics' },
-            { key: 'marketing' as const, icon: Mail, label: 'Marketing Emails', desc: 'News about product updates and features' },
+            { key: 'email' as const, icon: Mail, label: 'Email Notifications', desc: 'Receive email updates about member activity and events' },
+            { key: 'push' as const, icon: Bell, label: 'Push Notifications', desc: 'Get notified about chapter updates and new registrations' },
+            { key: 'weekly' as const, icon: Globe, label: 'Weekly Digest', desc: 'Receive a weekly membership and engagement summary' },
+            { key: 'marketing' as const, icon: Mail, label: 'Announcements', desc: 'Association-wide announcements and program launches' },
           ].map(({ key, icon: Icon, label, desc }) => (
             <div key={key} className="flex items-center justify-between py-2">
               <div className="flex items-start gap-3">

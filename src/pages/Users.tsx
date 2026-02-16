@@ -42,14 +42,14 @@ const UsersPage: React.FC = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Users</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">User accounts and activity.</p>
+        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Members</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Member accounts and roles.</p>
       </div>
 
       {/* Stats row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="card p-5">
-          <p className="text-sm text-gray-500 dark:text-gray-400">Total Users</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Total Members</p>
           <p className="text-2xl font-semibold text-gray-900 dark:text-white mt-1">{users.length}</p>
         </div>
         <div className="card p-5">
@@ -67,7 +67,7 @@ const UsersPage: React.FC = () => {
       </div>
 
       <DataTable
-        title="All Users"
+        title="All Members"
         data={users}
         columns={columns}
         searchKeys={['name', 'email', 'role']}

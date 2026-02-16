@@ -13,7 +13,7 @@ import { useTheme } from '../context/ThemeContext';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Overview' },
-  { to: '/users', icon: Users, label: 'Users' },
+  { to: '/users', icon: Users, label: 'Members' },
   { to: '/reports', icon: FileBarChart, label: 'Reports' },
   { to: '/settings', icon: Settings, label: 'Settings' },
 ];
@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
         <div className="w-7 h-7 rounded bg-blue-600 flex items-center justify-center shrink-0">
           <BarChart3 className="w-4 h-4 text-white" />
         </div>
-        <span className="font-semibold text-gray-900 dark:text-white">Metrics</span>
+        <span className="font-semibold text-gray-900 dark:text-white">AYSE</span>
       </div>
 
       {/* Navigation */}

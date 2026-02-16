@@ -11,9 +11,9 @@ interface MetricCardProps {
 
 const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, period, icon: Icon }) => {
   const isPositive = change > 0;
-  // For bounce rate, negative change is good
-  const isBounce = title.toLowerCase().includes('bounce');
-  const isGood = isBounce ? !isPositive : isPositive;
+  // For retention rate, higher is better (positive change = good)
+  // This just uses the default: positive change is good
+  const isGood = isPositive;
 
   return (
     <div className="card p-6">

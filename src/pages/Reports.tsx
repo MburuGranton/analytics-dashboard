@@ -3,15 +3,15 @@ import { Calendar } from 'lucide-react';
 import PieChart from '../components/PieChart';
 import BarChart from '../components/BarChart';
 import LineChart from '../components/LineChart';
-import { browserStats, pageStats, sessionData } from '../data/mockData';
+import { chapterStats, programStats, engagementData } from '../data/mockData';
 
 const dateRanges = ['Last 7 days', 'Last 14 days', 'Last 30 days', 'Last 90 days'] as const;
 
 const Reports: React.FC = () => {
   const [selectedRange, setSelectedRange] = useState<string>('Last 30 days');
 
-  // Filter session data based on selected range
-  const filteredSessions = useMemo(() => {
+  // Filter engagement data based on selected range
+  const filteredEngagement = useMemo(() => {
     const days =
       selectedRange === 'Last 7 days'
         ? 7
@@ -20,7 +20,7 @@ const Reports: React.FC = () => {
         : selectedRange === 'Last 90 days'
         ? 30
         : 30;
-    return sessionData.slice(-days);
+    return engagementData.slice(-days);
   }, [selectedRange]);
 
   return (
@@ -29,7 +29,7 @@ const Reports: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Reports</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Performance data and trends.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Membership data and program performance.</p>
         </div>
         <div className="relative">
           <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -47,10 +47,10 @@ const Reports: React.FC = () => {
         </div>
       </div>
 
-      {/* Sessions chart */}
+      {/* Daily active members chart */}
       <LineChart
-        title="Sessions Over Time"
-        data={filteredSessions.map((d) => ({ label: d.date, value: d.sessions }))}
+        title="Daily Active Members"
+        data={filteredEngagement.map((d) => ({ label: d.date, value: d.activeMembers }))}
         primaryColor="#3b82f6"
         formatValue={(v) => v.toLocaleString()}
       />
@@ -58,56 +58,56 @@ const Reports: React.FC = () => {
       {/* Two-column row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <PieChart
-          title="Browser Distribution"
-          data={browserStats.map((b) => ({
-            label: b.name,
-            value: b.share,
-            color: b.color,
+          title="Chapter Distribution"
+          data={chapterStats.map((c) => ({
+            label: c.name,
+            value: c.share,
+            color: c.color,
           }))}
         />
         <BarChart
-          title="Top Pages by Views"
-          data={pageStats.slice(0, 6).map((p) => ({
-            label: p.page,
-            value: p.views,
+          title="Programs by Enrollment"
+          data={programStats.slice(0, 6).map((p) => ({
+            label: p.program,
+            value: p.enrolled,
             color: '#3b82f6',
           }))}
           formatValue={(v) => v.toLocaleString()}
         />
       </div>
 
-      {/* Page stats table */}
+      {/* Program performance table */}
       <div className="card overflow-hidden">
         <div className="p-6 pb-4">
-          <h3 className="text-base font-semibold text-gray-900 dark:text-white">Page Performance</h3>
+          <h3 className="text-base font-semibold text-gray-900 dark:text-white">Program Performance</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-t border-b border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/30">
-                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Page</th>
-                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Views</th>
-                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Unique Visitors</th>
-                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Avg. Time</th>
-                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Bounce Rate</th>
+                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Program</th>
+                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Enrolled</th>
+                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Completed</th>
+                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Avg. Rating</th>
+                <th className="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-400">Completion Rate</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
-              {pageStats.map((p, i) => (
+              {programStats.map((p, i) => (
                 <tr key={i} className="hover:bg-gray-50/50 dark:hover:bg-gray-800/30 transition-colors">
-                  <td className="px-6 py-3.5 font-medium text-primary-600 dark:text-primary-400">{p.page}</td>
-                  <td className="px-6 py-3.5 text-gray-700 dark:text-gray-300 tabular-nums">{p.views.toLocaleString()}</td>
-                  <td className="px-6 py-3.5 text-gray-700 dark:text-gray-300 tabular-nums">{p.uniqueVisitors.toLocaleString()}</td>
-                  <td className="px-6 py-3.5 text-gray-700 dark:text-gray-300">{p.avgTime}</td>
+                  <td className="px-6 py-3.5 font-medium text-primary-600 dark:text-primary-400">{p.program}</td>
+                  <td className="px-6 py-3.5 text-gray-700 dark:text-gray-300 tabular-nums">{p.enrolled.toLocaleString()}</td>
+                  <td className="px-6 py-3.5 text-gray-700 dark:text-gray-300 tabular-nums">{p.completed.toLocaleString()}</td>
+                  <td className="px-6 py-3.5 text-gray-700 dark:text-gray-300">{p.avgRating}</td>
                   <td className="px-6 py-3.5">
                     <div className="flex items-center gap-2">
                       <div className="w-16 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                         <div
                           className="h-full rounded-full bg-primary-500"
-                          style={{ width: `${p.bounceRate}%` }}
+                          style={{ width: `${p.completionRate}%` }}
                         />
                       </div>
-                      <span className="text-gray-700 dark:text-gray-300 tabular-nums">{p.bounceRate}%</span>
+                      <span className="text-gray-700 dark:text-gray-300 tabular-nums">{p.completionRate}%</span>
                     </div>
                   </td>
                 </tr>
