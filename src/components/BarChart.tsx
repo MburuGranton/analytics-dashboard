@@ -20,7 +20,7 @@ const BarChart: React.FC<BarChartProps> = ({
   height = 280,
   title,
   formatValue = (v) => v.toLocaleString(),
-  barColor = '#6366f1',
+  barColor = '#3b82f6',
   horizontal = false,
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -30,7 +30,7 @@ const BarChart: React.FC<BarChartProps> = ({
 
     return (
       <div className="card p-6">
-        {title && <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4">{title}</h3>}
+        {title && <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-3">{title}</h3>}
         <div className="space-y-3">
           {data.map((item, i) => (
             <div
@@ -77,7 +77,7 @@ const BarChart: React.FC<BarChartProps> = ({
 
   return (
     <div className="card p-6">
-      {title && <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-4">{title}</h3>}
+      {title && <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-3">{title}</h3>}
       <div className="overflow-x-auto">
         <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full" style={{ minWidth: 350 }}>
           <defs>

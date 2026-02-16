@@ -29,7 +29,7 @@ const Reports: React.FC = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Reports</h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">In-depth analytics and performance metrics.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Performance data and trends.</p>
         </div>
         <div className="relative">
           <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -51,7 +51,7 @@ const Reports: React.FC = () => {
       <LineChart
         title="Sessions Over Time"
         data={filteredSessions.map((d) => ({ label: d.date, value: d.sessions }))}
-        primaryColor="#8b5cf6"
+        primaryColor="#3b82f6"
         formatValue={(v) => v.toLocaleString()}
       />
 
@@ -70,7 +70,7 @@ const Reports: React.FC = () => {
           data={pageStats.slice(0, 6).map((p) => ({
             label: p.page,
             value: p.views,
-            color: '#6366f1',
+            color: '#3b82f6',
           }))}
           formatValue={(v) => v.toLocaleString()}
         />

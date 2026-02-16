@@ -10,12 +10,12 @@ const Overview: React.FC = () => {
     <div className="space-y-6">
       {/* Page header */}
       <div>
-        <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Dashboard Overview</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Welcome back! Here's what's happening today.</p>
+        <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Overview</h1>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</p>
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">
         <MetricCard
           title="Total Revenue"
           value={kpiMetrics.revenue.value}

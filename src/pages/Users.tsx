@@ -43,7 +43,7 @@ const UsersPage: React.FC = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Users</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage and monitor your user base.</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">User accounts and activity.</p>
       </div>
 
       {/* Stats row */}

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Save, Bell, Mail, Shield, Globe } from 'lucide-react';
 
 const Settings: React.FC = () => {
-  const [name, setName] = useState('John Doe');
-  const [email, setEmail] = useState('john@company.com');
+  const [name, setName] = useState('Grant Mburu');
+  const [email, setEmail] = useState('grant@example.com');
   const [saved, setSaved] = useState(false);
 
   const [notifications, setNotifications] = useState({
@@ -27,7 +27,7 @@ const Settings: React.FC = () => {
     <div className="space-y-6 max-w-3xl">
       <div>
         <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Settings</h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Manage your account preferences.</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Account and notification settings.</p>
       </div>
 
       {/* Profile */}
@@ -38,11 +38,7 @@ const Settings: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-5">
-          <img
-            src="https://api.dicebear.com/7.x/initials/svg?seed=JD&backgroundColor=6366f1&textColor=ffffff"
-            alt="Avatar"
-            className="w-16 h-16 rounded-full"
-          />
+          <div className="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-lg font-semibold">GM</div>
           <div>
             <p className="font-medium text-gray-900 dark:text-white">{name}</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">{email}</p>

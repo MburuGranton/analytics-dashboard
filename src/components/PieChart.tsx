@@ -99,9 +99,14 @@ const PieChart: React.FC<PieChartProps> = ({ data, title, size = 220, donut = tr
               </>
             )}
             {donut && hoveredIndex === null && (
-              <text x={cx} y={cy + 5} textAnchor="middle" fontSize={13} className="fill-gray-400 dark:fill-gray-500">
-                Hover to see
-              </text>
+              <>
+                <text x={cx} y={cy - 6} textAnchor="middle" fontSize={20} fontWeight={700} className="fill-gray-900 dark:fill-white">
+                  {total.toLocaleString()}
+                </text>
+                <text x={cx} y={cy + 14} textAnchor="middle" fontSize={11} className="fill-gray-500 dark:fill-gray-400">
+                  Total
+                </text>
+              </>
             )}
           </svg>
         </div>
