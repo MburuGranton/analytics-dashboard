@@ -26,7 +26,7 @@ const Settings: React.FC = () => {
   return (
     <div className="space-y-6 max-w-3xl">
       <div>
-        <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Settings</h1>
+        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Settings</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Account and notification settings.</p>
       </div>
 
@@ -75,7 +75,7 @@ const Settings: React.FC = () => {
             Save Changes
           </button>
           {saved && (
-            <span className="text-sm text-emerald-600 dark:text-emerald-400 font-medium animate-pulse">
+            <span className="text-sm text-primary-600 dark:text-primary-400 font-medium animate-pulse">
               Changes saved!
             </span>
           )}

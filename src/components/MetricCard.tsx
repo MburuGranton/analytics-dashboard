@@ -29,7 +29,7 @@ const MetricCard: React.FC<MetricCardProps> = ({ title, value, change, period, i
       <div className="mt-4 flex items-center gap-2">
         <span
           className={`inline-flex items-center gap-1 text-sm font-semibold ${
-            isGood ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'
+            isGood ? 'text-primary-600 dark:text-primary-400' : 'text-gray-500 dark:text-gray-400'
           }`}
         >
           {isPositive ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />}

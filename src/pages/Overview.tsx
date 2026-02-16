@@ -10,7 +10,7 @@ const Overview: React.FC = () => {
     <div className="space-y-6">
       {/* Page header */}
       <div>
-        <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Overview</h1>
+        <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Overview</h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}</p>
       </div>
 

@@ -90,7 +90,7 @@ const PieChart: React.FC<PieChartProps> = ({ data, title, size = 220, donut = tr
             {/* Center text for donut */}
             {donut && hoveredIndex !== null && (
               <>
-                <text x={cx} y={cy - 6} textAnchor="middle" fontSize={22} fontWeight={700} className="fill-gray-900 dark:fill-white font-display">
+                <text x={cx} y={cy - 6} textAnchor="middle" fontSize={22} fontWeight={700} className="fill-gray-900 dark:fill-white">
                   {slices[hoveredIndex].percentage}%
                 </text>
                 <text x={cx} y={cy + 14} textAnchor="middle" fontSize={11} className="fill-gray-500 dark:fill-gray-400">

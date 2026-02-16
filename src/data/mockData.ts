@@ -75,12 +75,12 @@ export const revenueData: RevenueDataPoint[] = [
 
 // Traffic sources
 export const trafficSources: TrafficSource[] = [
-  { source: 'Organic Search', visitors: 4520, color: '#6366f1' },
-  { source: 'Direct', visitors: 3210, color: '#8b5cf6' },
-  { source: 'Social Media', visitors: 2840, color: '#a78bfa' },
-  { source: 'Referral', visitors: 1650, color: '#c4b5fd' },
-  { source: 'Email', visitors: 980, color: '#ddd6fe' },
-  { source: 'Paid Ads', visitors: 647, color: '#818cf8' },
+  { source: 'Organic Search', visitors: 4520, color: '#2563eb' },
+  { source: 'Direct', visitors: 3210, color: '#3b82f6' },
+  { source: 'Social Media', visitors: 2840, color: '#60a5fa' },
+  { source: 'Referral', visitors: 1650, color: '#93c5fd' },
+  { source: 'Email', visitors: 980, color: '#bfdbfe' },
+  { source: 'Paid Ads', visitors: 647, color: '#dbeafe' },
 ];
 
 // Users list (25 users)
@@ -97,7 +97,7 @@ export const users: User[] = firstNames.map((first, i) => ({
   status: statuses[i % statuses.length],
   joinDate: new Date(2024, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString().split('T')[0],
   lastActive: `${Math.floor(Math.random() * 23) + 1}h ago`,
-  avatar: `https://api.dicebear.com/7.x/initials/svg?seed=${first}+${lastNames[i]}&backgroundColor=6366f1,8b5cf6,a78bfa&textColor=ffffff`,
+  avatar: `https://api.dicebear.com/7.x/initials/svg?seed=${first}+${lastNames[i]}&backgroundColor=3b82f6&textColor=ffffff`,
 }));
 
 // Top pages
@@ -114,11 +114,11 @@ export const pageStats: PageStat[] = [
 
 // Browser stats
 export const browserStats: BrowserStat[] = [
-  { name: 'Chrome', share: 58.2, color: '#6366f1' },
-  { name: 'Safari', share: 19.4, color: '#8b5cf6' },
-  { name: 'Firefox', share: 10.8, color: '#a78bfa' },
-  { name: 'Edge', share: 7.3, color: '#c4b5fd' },
-  { name: 'Other', share: 4.3, color: '#e0e7ff' },
+  { name: 'Chrome', share: 58.2, color: '#1d4ed8' },
+  { name: 'Safari', share: 19.4, color: '#3b82f6' },
+  { name: 'Firefox', share: 10.8, color: '#60a5fa' },
+  { name: 'Edge', share: 7.3, color: '#93c5fd' },
+  { name: 'Other', share: 4.3, color: '#dbeafe' },
 ];
 
 // Session data (30 days)
@@ -132,12 +132,12 @@ export const sessionData: SessionDataPoint[] = Array.from({ length: 30 }, (_, i)
 
 // Recent activity
 export const recentActivity: Activity[] = [
-  { id: 1, user: 'Alice Anderson', action: 'created', target: 'Q4 Revenue Report', time: '2 min ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=AA&backgroundColor=6366f1&textColor=ffffff' },
-  { id: 2, user: 'Bob Brooks', action: 'updated', target: 'User Permissions', time: '15 min ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=BB&backgroundColor=8b5cf6&textColor=ffffff' },
-  { id: 3, user: 'Charlie Chen', action: 'deleted', target: 'Old Campaign Data', time: '1 hour ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=CC&backgroundColor=a78bfa&textColor=ffffff' },
-  { id: 4, user: 'Diana Davis', action: 'exported', target: 'Monthly Analytics', time: '2 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=DD&backgroundColor=6366f1&textColor=ffffff' },
-  { id: 5, user: 'Ethan Evans', action: 'commented on', target: 'Traffic Analysis', time: '3 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=EE&backgroundColor=8b5cf6&textColor=ffffff' },
-  { id: 6, user: 'Fiona Fischer', action: 'shared', target: 'Dashboard Link', time: '5 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=FF&backgroundColor=a78bfa&textColor=ffffff' },
-  { id: 7, user: 'George Garcia', action: 'approved', target: 'Budget Request', time: '6 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=GG&backgroundColor=6366f1&textColor=ffffff' },
-  { id: 8, user: 'Hannah Hayes', action: 'uploaded', target: 'Product Images', time: '8 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=HH&backgroundColor=8b5cf6&textColor=ffffff' },
+  { id: 1, user: 'Alice Anderson', action: 'created', target: 'Q4 Revenue Report', time: '2 min ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=AA&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 2, user: 'Bob Brooks', action: 'updated', target: 'User Permissions', time: '15 min ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=BB&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 3, user: 'Charlie Chen', action: 'deleted', target: 'Old Campaign Data', time: '1 hour ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=CC&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 4, user: 'Diana Davis', action: 'exported', target: 'Monthly Analytics', time: '2 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=DD&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 5, user: 'Ethan Evans', action: 'commented on', target: 'Traffic Analysis', time: '3 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=EE&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 6, user: 'Fiona Fischer', action: 'shared', target: 'Dashboard Link', time: '5 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=FF&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 7, user: 'George Garcia', action: 'approved', target: 'Budget Request', time: '6 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=GG&backgroundColor=3b82f6&textColor=ffffff' },
+  { id: 8, user: 'Hannah Hayes', action: 'uploaded', target: 'Product Images', time: '8 hours ago', avatar: 'https://api.dicebear.com/7.x/initials/svg?seed=HH&backgroundColor=3b82f6&textColor=ffffff' },
 ];

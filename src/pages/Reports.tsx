@@ -28,7 +28,7 @@ const Reports: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-gray-900 dark:text-white">Reports</h1>
+          <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">Reports</h1>
           <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Performance data and trends.</p>
         </div>
         <div className="relative">
@@ -103,13 +103,7 @@ const Reports: React.FC = () => {
                     <div className="flex items-center gap-2">
                       <div className="w-16 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
                         <div
-                          className={`h-full rounded-full ${
-                            p.bounceRate < 30
-                              ? 'bg-emerald-500'
-                              : p.bounceRate < 45
-                              ? 'bg-amber-500'
-                              : 'bg-red-500'
-                          }`}
+                          className="h-full rounded-full bg-primary-500"
                           style={{ width: `${p.bounceRate}%` }}
                         />
                       </div>
